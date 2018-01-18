@@ -1,0 +1,42 @@
+{
+  "name": "create-sewing-kit-app",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Chris Sauve <chrismsauve@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "nuke": "sewing-kit nuke",
+    "optimize": "sewing-kit optimize",
+    "generate": "sewing-kit generate",
+    "g": "sewing-kit generate",
+    "type-check": "sewing-kit type-check",
+    "format": "sewing-kit format",
+    "lint": "sewing-kit lint",
+    "test": "sewing-kit test",
+    "test:server": "sewing-kit test --server-only",
+    "check": "sewing-kit check",
+    "build:production": "sewing-kit build --mode production",
+    "build:development": "sewing-kit build --mode development",
+    "playground": "sewing-kit playground",
+    "dev": "sewing-kit dev",
+    "debug": "sewing-kit dev --debug --source-maps",
+    "prod": "sewing-kit start",
+    "start": "node build/server/main.js"
+  },
+  "devDependencies": {
+    "@shopify/sewing-kit": "^0.26.0",
+    "@types/fs-extra": "^4.0.4",
+    "@types/koa": "^2.0.40",
+    "@types/react-hot-loader": "^3.0.5",
+    "typescript": "^2.6.1"
+  },
+  "dependencies": {
+    "@shopify/polaris": "^1.8.3",
+    "fs-extra": "^4.0.2",
+    "koa": "^2.4.1",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "react-hot-loader": "^3.1.2"
+  }
+}
