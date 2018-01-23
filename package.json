@@ -25,11 +25,15 @@
     "start": "node build/server/main.js"
   },
   "devDependencies": {
-    "@shopify/sewing-kit": "^0.26.0",
+    "@shopify/sewing-kit": "^0.27.0",
     "@types/fs-extra": "^4.0.4",
     "@types/koa": "^2.0.40",
     "@types/react-hot-loader": "^3.0.5",
-    "typescript": "^2.6.1"
+    "@types/webpack": "^3.8.3",
+    "babel-plugin-universal-import": "^1.4.0",
+    "extract-css-chunks-webpack-plugin": "^2.0.18",
+    "typescript": "^2.6.1",
+    "webpack-stats-plugin": "^0.1.5"
   },
   "dependencies": {
     "@shopify/polaris": "^1.8.3",
@@ -37,6 +41,8 @@
     "koa": "^2.4.1",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
-    "react-hot-loader": "^3.1.2"
+    "react-hot-loader": "^3.1.2",
+    "react-universal-component": "^2.8.1",
+    "webpack-flush-chunks": "^1.2.3"
   }
 }
