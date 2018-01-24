@@ -3,9 +3,9 @@ import {Page, Button} from '@shopify/polaris';
 import universal from 'react-universal-component';
 import './index.css';
 
-const HomeTab = universal(import('./components/Home/Home'));
-const FooTab = universal(import('./components/Foo/Foo'));
-const BarTab = universal(import('./components/Bar/Bar'));
+const UniversalTab = universal(({tab}: any) =>
+  import(`./components/${tab}/${tab}`),
+);
 
 export default class App extends React.Component {
   state = {selected: 'Home'};
@@ -14,11 +14,7 @@ export default class App extends React.Component {
     return (
       <Page title="Sewing Kit/ Polaris app">
         <div>
-          {this.state.selected === 'Home' && <HomeTab />}
-
-          {this.state.selected === 'Foo' && <FooTab />}
-
-          {this.state.selected === 'Bar' && <BarTab />}
+          <UniversalTab tab={this.state.selected} />
 
           <Button onClick={() => this.setState({selected: 'Home'})}>
             Home

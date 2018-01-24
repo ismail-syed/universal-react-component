@@ -17,17 +17,14 @@ export default function serverRender({clientStats}: any) {
     const app = renderToString(<App />);
     const chunkNames = flushChunkNames();
     const before = ['runtime', 'vendor'];
-    const {
-      js,
-      styles,
-      cssHash,
-      scripts,
-      stylesheets
-    } = flushChunks(clientStats, {
-      chunkNames,
-      before,
-      outputPath: '/webpack/assets/',
-    });
+    const {js, styles, cssHash, scripts, stylesheets} = flushChunks(
+      clientStats,
+      {
+        chunkNames,
+        before,
+        outputPath: '/webpack/assets/',
+      },
+    );
 
     console.log('Dynamic Chunk Names Rendered: ', chunkNames);
     console.log('js: ', js);
@@ -51,5 +48,5 @@ export default function serverRender({clientStats}: any) {
       </html>`;
 
     await next();
-  }
+  };
 }
