@@ -2,7 +2,7 @@
 const webpack = require('webpack');
 const {ip, port} = require('./app.js');
 
-var StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
+var StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 
 module.exports = function createConfig(plugins, env) {
@@ -14,8 +14,8 @@ module.exports = function createConfig(plugins, env) {
         ip,
         port,
       }),
+      plugins.vendors(['react', 'react-dom', '@shopify/polaris']),
       plugins.webpack(config => {
-
         config.plugins.push(
           new StatsWriterPlugin({
             filename: 'client-stats.json',
@@ -27,12 +27,12 @@ module.exports = function createConfig(plugins, env) {
         config.module.rules.push({
           test: /\.css$/,
           use: ExtractCssChunks.extract({
-            use: 'css-loader'
-          })
+            use: 'css-loader',
+          }),
         });
 
         return config;
-      })
-    ]
-  }
+      }),
+    ],
+  };
 };
