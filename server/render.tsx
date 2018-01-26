@@ -42,6 +42,14 @@ export default function serverRender({clientStats}: any) {
       </head>
       <body>
         <div id="app"> ${app}</div>
+        <div>
+          <span> chunkNames: ${chunkNames} </span>
+          <span> js: ${js} </span>
+          <span> styles: ${styles} </span>
+          <span> cssHash: ${cssHash} </span>
+          <span> scripts: ${scripts} </span>
+          <span> stylesheets: ${stylesheets} </span>
+        </div>
         ${cssHash ? cssHash : ''}
         ${js ? js : ''}
       </body>

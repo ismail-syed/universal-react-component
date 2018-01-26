@@ -16,10 +16,17 @@ module.exports = function createConfig(plugins, env) {
       }),
       plugins.vendors(['react', 'react-dom', '@shopify/polaris']),
       plugins.webpack(config => {
+        config.module.rules = config.module.rules.map(loader => {
+          if (loader.loader === 'babel-loader') {
+            loader.options.plugins = ['universal-import'];
+            return loader;
+          }
+          return loader;
+        });
         config.plugins.push(
           new StatsWriterPlugin({
             filename: 'client-stats.json',
-            fields: ['assetsByChunkName', 'publicPath', 'assets'],
+            fields: ['assetsByChunkName', 'publicPath'],
           }),
           new ExtractCssChunks(),
         );
@@ -30,7 +37,7 @@ module.exports = function createConfig(plugins, env) {
             use: 'css-loader',
           }),
         });
-
+        // console.log('config: ', config);
         return config;
       }),
     ],
