@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {Page, Button} from '@shopify/polaris';
-import universal from 'react-universal-component';
+// import universal from 'react-universal-component';
 import './index.css';
 
-const HomeTab = universal(import('./components/Home/Home'));
-const FooTab = universal(import('./components/Foo/Foo'));
-const BarTab = universal(import('./components/Bar/Bar'));
+const HomeTab = () => <div className="Home">Home is Loaded</div>;
+const FooTab = () => <div className="Foo">Foo is Loaded</div>;
+const BarTab = () => <div className="Bar">Bar is Loaded</div>;
 
 export default class App extends React.Component {
   state = {selected: 'Home'};
