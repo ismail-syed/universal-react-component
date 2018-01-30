@@ -10,19 +10,16 @@ module.exports = function createConfig(plugins, env) {
     name: 'example',
     plugins: [
       plugins.cdn('http://localhost:8080/webpack/assets/'),
+
+      plugins.experiments({
+        universalImport: true,
+      }),
       plugins.devServer({
         ip,
         port,
       }),
       plugins.vendors(['react', 'react-dom', '@shopify/polaris']),
       plugins.webpack(config => {
-        config.module.rules = config.module.rules.map(loader => {
-          if (loader.loader === 'babel-loader') {
-            loader.options.plugins = ['universal-import'];
-            return loader;
-          }
-          return loader;
-        });
         config.plugins.push(
           new StatsWriterPlugin({
             filename: 'client-stats.json',
@@ -37,7 +34,6 @@ module.exports = function createConfig(plugins, env) {
             use: 'css-loader',
           }),
         });
-        // console.log('config: ', config);
         return config;
       }),
     ],
