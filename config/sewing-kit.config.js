@@ -1,18 +1,23 @@
 /* eslint-env node */
 const webpack = require('webpack');
+const {resolve} = require('path');
 const {ip, port} = require('./app.js');
 
-var StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
-const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
+const {ReactLoadablePlugin} = require('react-loadable/webpack');
+const app = resolve(__dirname, '../app');
 
 module.exports = function createConfig(plugins, env) {
   return {
     name: 'example',
     plugins: [
       plugins.cdn('http://localhost:8080/webpack/assets/'),
-
-      plugins.experiments({
-        universalImport: true,
+      plugins.sass({
+        autoInclude: [
+          resolve(app, 'index.scss'),
+          resolve(app, './Home/Home.scss'),
+          resolve(app, './Bar/Bar.scss'),
+          resolve(app, './Foo/Foo.scss'),
+        ],
       }),
       plugins.devServer({
         ip,
@@ -20,20 +25,17 @@ module.exports = function createConfig(plugins, env) {
       }),
       plugins.vendors(['react', 'react-dom', '@shopify/polaris']),
       plugins.webpack(config => {
-        config.plugins.push(
-          new StatsWriterPlugin({
-            filename: 'client-stats.json',
-            fields: ['assetsByChunkName', 'publicPath'],
-          }),
-          new ExtractCssChunks(),
-        );
+        if (env.isProductionClient) {
+          config.plugins.push(
+            new ReactLoadablePlugin({
+              filename: resolve(
+                __dirname,
+                '../build/client/react-loadable.json',
+              ),
+            }),
+          );
+        }
 
-        config.module.rules.push({
-          test: /\.css$/,
-          use: ExtractCssChunks.extract({
-            use: 'css-loader',
-          }),
-        });
         return config;
       }),
     ],

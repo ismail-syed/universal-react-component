@@ -24,13 +24,6 @@
   dependencies:
     "@babel/types" "7.0.0-beta.36"
 
-"@babel/helper-module-imports@^7.0.0-beta.32":
-  version "7.0.0-beta.38"
-  resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.0.0-beta.38.tgz#1b3a6dd9105cc0c7fc0d67d44a08706eb4a506a1"
-  dependencies:
-    "@babel/types" "7.0.0-beta.38"
-    lodash "^4.2.0"
-
 "@babel/template@7.0.0-beta.36":
   version "7.0.0-beta.36"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.36.tgz#02e903de5d68bd7899bce3c5b5447e59529abb00"
@@ -56,14 +49,6 @@
 "@babel/types@7.0.0-beta.36":
   version "7.0.0-beta.36"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0-beta.36.tgz#64f2004353de42adb72f9ebb4665fc35b5499d23"
-  dependencies:
-    esutils "^2.0.2"
-    lodash "^4.2.0"
-    to-fast-properties "^2.0.0"
-
-"@babel/types@7.0.0-beta.38":
-  version "7.0.0-beta.38"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0-beta.38.tgz#2ce2443f7dc6ad535a67db4940cbd34e64035a6f"
   dependencies:
     esutils "^2.0.2"
     lodash "^4.2.0"
@@ -334,6 +319,12 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-loadable@^5.3.2":
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/@types/react-loadable/-/react-loadable-5.3.2.tgz#dd6febf7fa76e15ac0168bdd79b971c4b1b41f93"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@^2.0.6":
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-2.0.6.tgz#8903fa2cf540ba454461590bff811a787889617c"
@@ -438,13 +429,6 @@ aggregate-error@^1.0.0:
 ajv-keywords@^2.0.0, ajv-keywords@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-2.1.1.tgz#617997fc5f60576894c435f940d819e135b80762"
-
-ajv@4.11.2:
-  version "4.11.2"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-4.11.2.tgz#f166c3c11cbc6cb9dcc102a5bcfe5b72c95287e6"
-  dependencies:
-    co "^4.6.0"
-    json-stable-stringify "^1.0.1"
 
 ajv@^4.9.1:
   version "4.11.8"
@@ -740,7 +724,7 @@ async@^1.4.0, async@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@^2.1.2, async@^2.1.4, async@^2.1.5, async@^2.4.1, async@^2.5.0:
+async@^2.1.2, async@^2.1.4, async@^2.1.5, async@^2.4.1:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.0.tgz#61a29abb6fcc026fea77e56d1c6ec53a795951f4"
   dependencies:
@@ -1348,12 +1332,6 @@ babel-plugin-transform-strict-mode@^6.24.1:
   dependencies:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
-
-babel-plugin-universal-import@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-universal-import/-/babel-plugin-universal-import-1.4.0.tgz#90a6d0f6e84898d9f986bef60e43d4b91509933d"
-  dependencies:
-    "@babel/helper-module-imports" "^7.0.0-beta.32"
 
 babel-polyfill@^6.23.0:
   version "6.26.0"
@@ -3764,17 +3742,6 @@ extglob@^2.0.2:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-extract-css-chunks-webpack-plugin@^2.0.18:
-  version "2.0.18"
-  resolved "https://registry.yarnpkg.com/extract-css-chunks-webpack-plugin/-/extract-css-chunks-webpack-plugin-2.0.18.tgz#74951e5d7c3bb683914922f339b1851116356412"
-  dependencies:
-    ajv "4.11.2"
-    async "^2.5.0"
-    loader-utils "^1.1.0"
-    schema-utils "^0.3.0"
-    style-loader "^0.18.2"
-    webpack-sources "^1.0.1"
-
 extract-text-webpack-plugin@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/extract-text-webpack-plugin/-/extract-text-webpack-plugin-3.0.2.tgz#5f043eaa02f9750a9258b78c0a6e0dc1408fb2f7"
@@ -4762,7 +4729,7 @@ hoek@4.x.x:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.0.tgz#72d9d0754f7fe25ca2d01ad8f8f9a9449a89526d"
 
-hoist-non-react-statics@^2.2.1, hoist-non-react-statics@^2.3.1:
+hoist-non-react-statics@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.3.1.tgz#343db84c6018c650778898240135a1420ee22ce0"
 
@@ -7972,7 +7939,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.6.0:
+prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -8190,6 +8157,12 @@ react-hot-loader@^3.1.3:
     redbox-react "^1.3.6"
     source-map "^0.6.1"
 
+react-loadable@^5.3.1:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-5.3.1.tgz#9699e9a08fed49bacd69caaa282034b62a76bcdd"
+  dependencies:
+    prop-types "^15.5.0"
+
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-3.0.0-alpha.1.tgz#4400426bcfa80caa6724c7755695315209fa4b07"
@@ -8216,13 +8189,6 @@ react-transition-group@^2.2.1:
     loose-envify "^1.3.1"
     prop-types "^15.5.8"
     warning "^3.0.0"
-
-react-universal-component@^2.8.1:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/react-universal-component/-/react-universal-component-2.8.1.tgz#b7425d18bb77b7add91c18d848b0b17de7c481f9"
-  dependencies:
-    hoist-non-react-statics "^2.2.1"
-    prop-types "^15.5.10"
 
 react@^16.1.0:
   version "16.1.0"
@@ -9416,13 +9382,6 @@ strip-outer@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.2"
 
-style-loader@^0.18.2:
-  version "0.18.2"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.18.2.tgz#cc31459afbcd6d80b7220ee54b291a9fd66ff5eb"
-  dependencies:
-    loader-utils "^1.0.2"
-    schema-utils "^0.3.0"
-
 style-loader@^0.19.0:
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.19.1.tgz#591ffc80bcefe268b77c5d9ebc0505d772619f85"
@@ -10475,10 +10434,6 @@ webpack-dev-server@^2.7.1:
     webpack-dev-middleware "1.12.2"
     yargs "6.6.0"
 
-webpack-flush-chunks@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/webpack-flush-chunks/-/webpack-flush-chunks-1.2.3.tgz#fcc6cbb39f8b7ff6544d535787b48530e2bbeafb"
-
 webpack-hot-middleware@^2.18.2:
   version "2.21.0"
   resolved "https://registry.yarnpkg.com/webpack-hot-middleware/-/webpack-hot-middleware-2.21.0.tgz#7b3c113a7a4b301c91e0749573c7aab28b414b52"
@@ -10515,10 +10470,6 @@ webpack-sources@^1.0.0, webpack-sources@^1.0.1:
   dependencies:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
-
-webpack-stats-plugin@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/webpack-stats-plugin/-/webpack-stats-plugin-0.1.5.tgz#29e5f12ebfd53158d31d656a113ac1f7b86179d9"
 
 webpack@3.5.3:
   version "3.5.3"
